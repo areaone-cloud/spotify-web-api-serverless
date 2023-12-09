@@ -19,13 +19,18 @@ test {
     useJUnitPlatform()
 }
 
-repositories {
-    maven {
-        name = "GitHubPackages"
-        url = "https://maven.pkg.github.com/areaone-cloud/spotify-web-api-serverless"
-        credentials {
-            username = System.getenv("GITHUB_ACTOR")
-            password = System.getenv("GITHUB_TOKEN")
+subprojects {
+    apply plugin: "maven-publish"
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/areaone-cloud/spotify-web-api-serverless")
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
         }
     }
 }
