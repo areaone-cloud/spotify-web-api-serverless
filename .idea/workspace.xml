@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45897202-58d0-4c10-b3b6-39f40b48ed1b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthenticationUriProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthenticationUriProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationCodeProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationCodeProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/ClientDetailsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/ClientDetailsProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/LibraryArtistsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/LibraryArtistsRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/SpotifyApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/SpotifyApiClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="45897202-58d0-4c10-b3b6-39f40b48ed1b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +54,9 @@
       </list>
     </option>
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="a3a1ac58-3af4-49b4-bb43-2f21ccf1f14f" />
+  </component>
   <component name="ProjectId" id="2ZHDJsFajOFYHQQiWVUZyrsNnsO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -84,7 +75,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -123,5 +115,9 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>

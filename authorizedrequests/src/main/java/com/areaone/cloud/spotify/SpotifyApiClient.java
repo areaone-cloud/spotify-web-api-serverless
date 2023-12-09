@@ -5,6 +5,10 @@ import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCrede
 
 public class SpotifyApiClient
 {
+    private SpotifyApiClient()
+    {
+    }
+
     static SpotifyApi build(AuthorizationCodeCredentials credentials)
     {
         return SpotifyApi.builder()
