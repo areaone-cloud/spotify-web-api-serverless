@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45897202-58d0-4c10-b3b6-39f40b48ed1b" name="Changes" comment="" />
+    <list default="true" id="45897202-58d0-4c10-b3b6-39f40b48ed1b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthenticationUriProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthenticationUriProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationCodeProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationCodeProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/AuthorizationInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/ClientDetailsProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorization/src/main/java/com/areaone/cloud/spotify/ClientDetailsProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/LibraryArtistsRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/LibraryArtistsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/SpotifyApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizedrequests/src/main/java/com/areaone/cloud/spotify/SpotifyApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +27,45 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spotify-web-api-serverless" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spotify-web-api-serverless" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spotify-web-api-serverless" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="2ZHDJsFajOFYHQQiWVUZyrsNnsO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -24,8 +75,53 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/Users/nathantilley/IdeaProjects/spotify-web-api-serverless/authentication",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/authentication" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="spotify-web-api-serverless [publish]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publish" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.spotify-web-api-serverless [publish]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
 </project>

@@ -1,2 +1,15 @@
-package com.areaone.cloud.spotify;public class SpotifyApiClient {
+package com.areaone.cloud.spotify;
+
+import se.michaelthelin.spotify.SpotifyApi;
+import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
+
+public class SpotifyApiClient
+{
+    static SpotifyApi build(AuthorizationCodeCredentials credentials)
+    {
+        return SpotifyApi.builder()
+                         .setAccessToken(credentials.getAccessToken())
+                         .setRefreshToken(credentials.getRefreshToken())
+                         .build();
+    }
 }

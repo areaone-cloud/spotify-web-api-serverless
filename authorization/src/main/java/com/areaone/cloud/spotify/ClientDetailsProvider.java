@@ -2,11 +2,11 @@ package com.areaone.cloud.spotify;
 
 import java.net.URI;
 
-public interface ClientDetailsProvider<T>
+public interface ClientDetailsProvider
 {
-    String getClientId(T options);
+    String getClientId();
 
-    String getClientSecret(T options);
+    String getClientSecret();
 
-    URI getRedirectUri(T options);
+    URI getRedirectUri();
 }

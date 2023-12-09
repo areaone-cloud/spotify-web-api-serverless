@@ -1,2 +1,4 @@
 rootProject.name = 'spotify-web-api-serverless'
+include 'authorization'
+include 'authorizedrequests'
 

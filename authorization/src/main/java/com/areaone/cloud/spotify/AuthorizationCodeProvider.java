@@ -7,9 +7,9 @@ import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCrede
 
 import java.io.IOException;
 
-public class UserCode
+public class AuthorizationCodeProvider
 {
-    AuthorizationCodeCredentials getAuthorizationCredentials(String code)
+    public AuthorizationCodeCredentials getAuthorizationCredentials(String code)
     {
         SpotifyApi spotifyAPi = SpotifyApi.builder()
                                           .build();
