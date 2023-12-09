@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
 }
 
-group = 'org.example'
+group = 'cloud.areaone'
 version = '1.0-SNAPSHOT'
 
 repositories {
