@@ -1,5 +1,7 @@
-group 'cloud.areaone'
-version '1.1-SNAPSHOT'
+allprojects {
+    group 'cloud.areaone.spotify-web-api-serverless'
+    version '1.1-SNAPSHOT'
+}
 
 subprojects { subproject ->
     apply plugin: "maven-publish"
@@ -28,5 +30,11 @@ subprojects { subproject ->
                 from components.java
             }
         }
+    }
+
+    tasks.register("printDetails") {
+        println "project.group: " + project.group
+        println "subproject.name: " + subproject.name
+        println "subproject.name: " + subproject.version
     }
 }
