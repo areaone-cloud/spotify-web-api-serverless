@@ -1,14 +1,3 @@
-plugins {
-    id 'java-library'
-}
-
-group = 'cloud.areaone'
-version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     api 'se.michaelthelin.spotify:spotify-web-api-java:8.+'
 

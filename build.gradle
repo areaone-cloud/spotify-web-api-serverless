@@ -21,6 +21,12 @@ test {
 
 subprojects {
     apply plugin: "maven-publish"
+    apply plugin: "java-library"
+
+    repositories {
+        mavenCentral()
+    }
+
     publishing {
         repositories {
             maven {
@@ -33,16 +39,32 @@ subprojects {
             }
         }
         publications {
-            mavenJava(MavenPublication) {
-                versionMapping {
-                    usage('java-api') {
-                        fromResolutionOf('runtimeClasspath')
-                    }
-                    usage('java-runtime') {
-                        fromResolutionResult()
-                    }
-                }
+            maven(MavenPublication) {
+                groupId = group
+                artifactId = project.name
+                version = version
+                from components.java
             }
         }
+//        publications {
+//            register(MavenPublication) {
+//                from(components["java"])
+//                pom {
+//                    url.set("https://maven.pkg.github.com/areaone-cloud/spotify-web-api-serverless")
+//                }
+//            }
+//        }
+//        publications {
+//            mavenJava(MavenPublication) {
+//                versionMapping {
+//                    usage('java-api') {
+//                        fromResolutionOf('runtimeClasspath')
+//                    }
+//                    usage('java-runtime') {
+//                        fromResolutionResult()
+//                    }
+//                }
+//            }
+//        }
     }
 }
