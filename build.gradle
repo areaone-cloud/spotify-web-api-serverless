@@ -1,25 +1,7 @@
-plugins {
-    id 'java'
-    id 'maven-publish'
-}
-
 group 'cloud.areaone'
-version '1.0-SNAPSHOT'
+version '1.1-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-}
-
-test {
-    useJUnitPlatform()
-}
-
-subprojects {
+subprojects { subproject ->
     apply plugin: "maven-publish"
     apply plugin: "java-library"
 
@@ -40,31 +22,11 @@ subprojects {
         }
         publications {
             maven(MavenPublication) {
-                groupId = group
-                artifactId = project.name
-                version = version
+                groupId = project.group
+                artifactId = subproject.name
+                version = project.version
                 from components.java
             }
         }
-//        publications {
-//            register(MavenPublication) {
-//                from(components["java"])
-//                pom {
-//                    url.set("https://maven.pkg.github.com/areaone-cloud/spotify-web-api-serverless")
-//                }
-//            }
-//        }
-//        publications {
-//            mavenJava(MavenPublication) {
-//                versionMapping {
-//                    usage('java-api') {
-//                        fromResolutionOf('runtimeClasspath')
-//                    }
-//                    usage('java-runtime') {
-//                        fromResolutionResult()
-//                    }
-//                }
-//            }
-//        }
     }
 }
