@@ -6,20 +6,26 @@ import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
 
 import java.io.IOException;
+import java.net.URI;
 
 public class AuthorizationCodeProvider
 {
-    public AuthorizationCodeCredentials getAuthorizationCredentials(String code)
+    public AuthorizationCodeCredentials getAuthorizationCredentials(ClientDetailsProvider detailsProvider, String code)
     {
-        SpotifyApi spotifyAPi = SpotifyApi.builder()
-                                          .build();
+        String clientId = detailsProvider.getClientId();
+        String clientSecret = detailsProvider.getClientSecret();
+        URI redirectUri = detailsProvider.getRedirectUri();
 
+        SpotifyApi spotifyApi = SpotifyApi.builder()
+                                          .setClientId(clientId)
+                                          .setClientSecret(clientSecret)
+                                          .setRedirectUri(redirectUri)
+                                          .build();
         try
         {
-            return spotifyAPi.authorizationCode(code)
+            return spotifyApi.authorizationCode(code)
                              .build()
                              .execute();
-
         }
         catch (IOException | SpotifyWebApiException | ParseException e)
         {

@@ -7,7 +7,7 @@ import se.michaelthelin.spotify.requests.authorization.authorization_code.Author
 import java.net.URI;
 import java.util.List;
 
-public class AuthenticationUriProvider
+public class AuthorizationUriProvider
 {
     public URI authenticate(ClientDetailsProvider detailsProvider, List<AuthorizationScope> scopes)
     {
