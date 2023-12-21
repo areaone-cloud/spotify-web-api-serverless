@@ -2,6 +2,7 @@ package com.areaone.cloud.spotify;
 
 import org.apache.hc.core5.http.ParseException;
 import se.michaelthelin.spotify.SpotifyApi;
+import se.michaelthelin.spotify.enums.ModelObjectType;
 import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
 import se.michaelthelin.spotify.model_objects.specification.Artist;
@@ -39,6 +40,8 @@ public class LibraryArtistsRequest
             return Stream.of(savedTracks.getItems())
                          .flatMap(t -> Stream.of(t.getTrack()
                                                   .getArtists()))
+                         .filter(a -> a.getType()
+                                       .equals(ModelObjectType.ARTIST))
                          .distinct()
                          .collect(Collectors.toList());
         }
