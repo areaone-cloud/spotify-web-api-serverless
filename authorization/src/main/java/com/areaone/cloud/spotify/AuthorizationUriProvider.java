@@ -1,4 +1,4 @@
-package com.areaone.cloud.clientdetails;
+package com.areaone.cloud.spotify;
 
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.enums.AuthorizationScope;

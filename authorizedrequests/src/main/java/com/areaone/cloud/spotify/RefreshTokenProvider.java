@@ -1,16 +1,18 @@
-package com.areaone.cloud.clientdetails;
+package com.areaone.cloud.spotify;
 
 import org.apache.hc.core5.http.ParseException;
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
+import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRefreshRequest;
 
 import java.io.IOException;
 import java.net.URI;
 
-public class AuthorizationCodeProvider
+public class RefreshTokenProvider
 {
-    public AuthorizationCodeCredentials getAuthorizationCredentials(ClientDetailsProvider detailsProvider, String code)
+    public AuthorizationCodeCredentials getRefreshedToken(ClientDetailsProvider detailsProvider,
+                                                          AuthorizationCodeCredentials credentials)
     {
         String clientId = detailsProvider.getClientId();
         String clientSecret = detailsProvider.getClientSecret();
@@ -20,12 +22,16 @@ public class AuthorizationCodeProvider
                                           .setClientId(clientId)
                                           .setClientSecret(clientSecret)
                                           .setRedirectUri(redirectUri)
+                                          .setAccessToken(credentials.getAccessToken())
+                                          .setRefreshToken(credentials.getRefreshToken())
                                           .build();
+
+        AuthorizationCodeRefreshRequest request = spotifyApi.authorizationCodeRefresh()
+                                                            .build();
+
         try
         {
-            return spotifyApi.authorizationCode(code)
-                             .build()
-                             .execute();
+            return request.execute();
         }
         catch (IOException | SpotifyWebApiException | ParseException e)
         {
