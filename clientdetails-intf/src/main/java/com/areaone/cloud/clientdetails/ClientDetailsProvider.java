@@ -1,4 +1,4 @@
-package com.areaone.cloud.spotify;
+package com.areaone.cloud.clientdetails;
 
 import java.net.URI;
 

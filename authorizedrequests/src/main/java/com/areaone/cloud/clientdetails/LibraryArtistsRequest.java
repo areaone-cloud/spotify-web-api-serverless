@@ -1,4 +1,4 @@
-package com.areaone.cloud.spotify;
+package com.areaone.cloud.clientdetails;
 
 import org.apache.hc.core5.http.ParseException;
 import se.michaelthelin.spotify.SpotifyApi;

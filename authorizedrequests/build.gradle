@@ -1,5 +1,6 @@
 dependencies {
     api 'se.michaelthelin.spotify:spotify-web-api-java:8.+'
+    implementation project (':clientdetails-intf')
 
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
