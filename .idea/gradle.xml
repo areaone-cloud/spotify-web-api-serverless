@@ -10,6 +10,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/anonymous" />
+            <option value="$PROJECT_DIR$/anonymous-api" />
+            <option value="$PROJECT_DIR$/anonymousrequests" />
+            <option value="$PROJECT_DIR$/anonymousrequests-api" />
             <option value="$PROJECT_DIR$/authorization" />
             <option value="$PROJECT_DIR$/authorizedrequests" />
             <option value="$PROJECT_DIR$/clientdetails-intf" />

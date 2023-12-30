@@ -3,4 +3,7 @@ include 'anonymous'
 include 'authorization'
 include 'authorizedrequests'
 include 'clientdetails-intf'
+include 'anonymousrequests'
+include 'anonymous-api'
+include 'anonymousrequests-api'
 
