@@ -27,7 +27,7 @@ public class ArtistConcertsRequest
         return EntityUtils.toString(entity);
     };
 
-    ArtistConcertResponse getArtistConcerts(AnonymousCodeCredentials credentials, String artistId)
+    public ArtistConcertResponse getArtistConcerts(AnonymousCodeCredentials credentials, String artistId)
     {
         HttpGet request = new HttpGet("https://spclient.wg.spotify.com/concerts/v2/concerts/artist/" + artistId);
 
