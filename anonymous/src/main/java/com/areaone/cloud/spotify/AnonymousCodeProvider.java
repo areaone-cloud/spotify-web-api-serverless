@@ -27,7 +27,7 @@ public class AnonymousCodeProvider
         return EntityUtils.toString(entity);
     };
 
-    public AnonymousCodeCredentials getAnonymousCredentials(AnonymousInput input)
+    public AnonymousCodeCredentials getAnonymousCredentials(AnonymousInput ignored)
     {
         HttpGet request = new HttpGet("https://open.spotify.com");
 
