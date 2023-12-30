@@ -2,10 +2,9 @@ package com.areaone.cloud.spotify;
 
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.core5.http.ParseException;
+import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 
 import java.io.IOException;
@@ -17,21 +16,24 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 public class AnonymousCodeProvider
 {
+    private final HttpClientResponseHandler<String> responseHandler = response -> {
+        HttpEntity entity = response.getEntity();
+
+        if (response.getCode() != HTTP_OK || Objects.isNull(entity))
+        {
+            throw new RuntimeException();
+        }
+
+        return EntityUtils.toString(entity);
+    };
+
     public AnonymousCodeCredentials getAnonymousCredentials(AnonymousInput input)
     {
         HttpGet request = new HttpGet("https://open.spotify.com");
 
-        try (CloseableHttpClient httpClient = HttpClients.createDefault();
-             CloseableHttpResponse response = httpClient.execute(request))
+        try (CloseableHttpClient httpClient = HttpClients.createDefault())
         {
-            HttpEntity entity = response.getEntity();
-
-            if (response.getCode() != HTTP_OK || Objects.isNull(entity))
-            {
-                throw new RuntimeException();
-            }
-
-            String result = EntityUtils.toString(entity);
+            String result = httpClient.execute(request, responseHandler);
 
             String accessRegex = "\"accessToken\":\"(.+?)\"";
             String expiryRegex = "\"accessTokenExpirationTimestampMs\":([0-9]+)";
@@ -54,7 +56,7 @@ public class AnonymousCodeProvider
                 throw new RuntimeException();
             }
         }
-        catch (IOException | ParseException e)
+        catch (IOException e)
         {
             throw new RuntimeException(e);
         }
