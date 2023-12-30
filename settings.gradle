@@ -1,4 +1,5 @@
 rootProject.name = 'spotify-web-api-serverless'
+include 'anonymous'
 include 'authorization'
 include 'authorizedrequests'
 include 'clientdetails-intf'
