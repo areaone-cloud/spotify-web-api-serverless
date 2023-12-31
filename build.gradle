@@ -23,7 +23,7 @@ subprojects { subproject ->
             }
         }
         publications {
-            maven(MavenPublication) {
+            mavenJava(MavenPublication) {
                 from components.java
                 groupId = project.group
                 artifactId = subproject.name
