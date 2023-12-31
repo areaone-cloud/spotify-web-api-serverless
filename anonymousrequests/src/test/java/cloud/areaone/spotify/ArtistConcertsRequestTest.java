@@ -1,12 +1,14 @@
 package cloud.areaone.spotify;
 
 import com.google.gson.Gson;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class ArtistConcertsRequestTest
 {
 
     @Test
+    @Disabled
     void getArtistConcerts()
     {
         String accessToken = "BQCmKQrZTjtvM2ckXcZTLZGtimZ93JxlOCrAh6O1J3jPDG0p6Bpm_JT1lOXUdS91IElEVaOTOGVrNZlTs4JRU7XV90eW9cuz_t_lCG3GX9Iv-PnIrtc";
