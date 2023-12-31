@@ -1,6 +1,6 @@
 allprojects {
     group 'cloud.areaone.spotify-web-api-serverless'
-    version '0.8-SNAPSHOT'
+    version '0.9-SNAPSHOT'
 }
 
 subprojects { subproject ->
@@ -24,10 +24,10 @@ subprojects { subproject ->
         }
         publications {
             maven(MavenPublication) {
+                from components.java
                 groupId = project.group
                 artifactId = subproject.name
                 version = project.version
-                from components.java
             }
         }
     }
