@@ -37,6 +37,8 @@ public class ArtistConcertsRequest
 
     public ArtistConcertResponse getArtistConcerts(AnonymousCodeCredentials credentials, String artistId)
     {
+        logger.debug("accessToken: " + credentials.getAccessToken());
+
         try (CloseableHttpClient httpClient = HttpClients.createDefault())
         {
             URI uri = new URIBuilder(CONCERT_URL + artistId).setParameter("filterByLoc", "false")
