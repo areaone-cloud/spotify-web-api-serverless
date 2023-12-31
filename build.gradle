@@ -1,6 +1,6 @@
 allprojects {
     group 'cloud.areaone.spotify-web-api-serverless'
-    version '0.13-SNAPSHOT'
+    version '0.14-SNAPSHOT'
 }
 
 subprojects { subproject ->
@@ -32,12 +32,12 @@ subprojects { subproject ->
             }
         }
 
-        jar {
-            from {
-                configurations.runtimeClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
-            }
-            duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        }
+//        jar {
+//            from {
+//                configurations.runtimeClasspath.filter{ it.exists() }.collect { it.isDirectory() ? it : zipTree(it) }
+//            }
+//            duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+//        }
     }
 
     tasks.register("printDetails") {
