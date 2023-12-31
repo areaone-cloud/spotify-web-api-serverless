@@ -1,6 +1,6 @@
 allprojects {
     group 'cloud.areaone.spotify-web-api-serverless'
-    version '0.10-SNAPSHOT'
+    version '0.12-SNAPSHOT'
 }
 
 subprojects { subproject ->
@@ -9,6 +9,7 @@ subprojects { subproject ->
 
     repositories {
         mavenCentral()
+        gradlePluginPortal()
     }
 
     publishing {
@@ -23,12 +24,16 @@ subprojects { subproject ->
             }
         }
         publications {
-            mavenJava(MavenPublication) {
+            mavenClassesJar(MavenPublication) {
                 from components.java
                 groupId = project.group
                 artifactId = subproject.name
                 version = project.version
             }
+        }
+
+        jar {
+            from sourceSets.main.allJava
         }
     }
 
