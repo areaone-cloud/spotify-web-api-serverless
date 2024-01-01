@@ -21,7 +21,7 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 public class ArtistConcertsRequest
 {
-    private final static Logger logger = LogManager.getLogger(ArtistConcertsRequest.class);
+    private final static Logger logger = LogManager.getRootLogger();
     public static final String CONCERT_URL = "https://spclient.wg.spotify.com/concerts/v2/concerts/artist/";
 
     private final HttpClientResponseHandler<String> responseHandler = response -> {
