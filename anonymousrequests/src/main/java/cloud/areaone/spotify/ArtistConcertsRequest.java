@@ -37,8 +37,6 @@ public class ArtistConcertsRequest
 
     public ArtistConcertResponse getArtistConcerts(AnonymousCodeCredentials credentials, String artistId)
     {
-        logger.info("THIS IS A TEST");
-
         logger.debug("accessToken: " + credentials.getAccessToken());
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault())

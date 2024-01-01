@@ -1,6 +1,6 @@
 allprojects {
     group 'cloud.areaone.spotify-web-api-serverless'
-    version '0.22-SNAPSHOT'
+    version '0.23-SNAPSHOT'
 }
 
 subprojects { subproject ->
@@ -13,7 +13,7 @@ subprojects { subproject ->
     }
 
     dependencies {
-        implementation 'org.slf4j:slf4j-api:1.8.0-beta2'
+        implementation 'org.slf4j:slf4j-api:1.+'
     }
 
     publishing {

@@ -8,10 +8,10 @@ class ArtistConcertsRequestTest
 {
 
     @Test
-    @Disabled
+//    @Disabled
     void getArtistConcerts()
     {
-        String accessToken = "BQCmKQrZTjtvM2ckXcZTLZGtimZ93JxlOCrAh6O1J3jPDG0p6Bpm_JT1lOXUdS91IElEVaOTOGVrNZlTs4JRU7XV90eW9cuz_t_lCG3GX9Iv-PnIrtc";
+        String accessToken = "BQA9myHUp8XY8a8AsO9JC-ruwzzZGuFIdtvKaBtmxvpes6cUvuHyFdtctsb_NqU1HxwlwDfXOSWx1OTHdiFVM8uFCqyAYy_YTP-FuzXQdA5PL7AKvvE";
         AnonymousCodeCredentials anonymousCodeCredentials = new AnonymousCodeCredentials(accessToken, 0L);
         ArtistConcertResponse artistConcerts = new ArtistConcertsRequest().getArtistConcerts(anonymousCodeCredentials,
                                                                                              "1He0ZKninbT4FMEV9hUZKn");

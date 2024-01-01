@@ -46,10 +46,10 @@ public class AnonymousCodeProvider
 
             if (accessMatcher.find() && expiryMatcher.find())
             {
-                String group = accessMatcher.group(1);
-                String group1 = expiryMatcher.group(1);
+                String accessToken = accessMatcher.group(1);
+                String accessTokenExpirationTimestampMs = expiryMatcher.group(1);
 
-                return new AnonymousCodeCredentials(group, Long.valueOf(group1));
+                return new AnonymousCodeCredentials(accessToken, Long.valueOf(accessTokenExpirationTimestampMs));
             }
             else
             {
