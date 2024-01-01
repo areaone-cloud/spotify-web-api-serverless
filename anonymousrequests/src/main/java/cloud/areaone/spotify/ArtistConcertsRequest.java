@@ -9,8 +9,8 @@ import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.message.BasicHeader;
 import org.apache.hc.core5.net.URIBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URI;
@@ -21,7 +21,7 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 public class ArtistConcertsRequest
 {
-    private final static Logger logger = LogManager.getRootLogger();
+    static Logger logger = LoggerFactory.getLogger(ArtistConcertsRequest.class.getName());
     public static final String CONCERT_URL = "https://spclient.wg.spotify.com/concerts/v2/concerts/artist/";
 
     private final HttpClientResponseHandler<String> responseHandler = response -> {
