@@ -8,7 +8,7 @@ class ArtistConcertsRequestTest
 {
 
     @Test
-//    @Disabled
+    @Disabled
     void getArtistConcerts()
     {
         String accessToken = "BQA9myHUp8XY8a8AsO9JC-ruwzzZGuFIdtvKaBtmxvpes6cUvuHyFdtctsb_NqU1HxwlwDfXOSWx1OTHdiFVM8uFCqyAYy_YTP-FuzXQdA5PL7AKvvE";
