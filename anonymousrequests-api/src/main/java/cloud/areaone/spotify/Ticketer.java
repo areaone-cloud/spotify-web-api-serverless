@@ -10,8 +10,8 @@ public class Ticketer
     public String maxPrice;
     public Boolean soldOut;
     public String partnerURL;
-    public StartDate startDate;
-    public EndDate endDate;
+    public ConcertDate startDate;
+    public ConcertDate endDate;
 
     public Ticketer()
     {
@@ -32,8 +32,8 @@ public class Ticketer
         private String maxPrice;
         private Boolean soldOut;
         private String partnerURL;
-        private StartDate startDate;
-        private EndDate endDate;
+        private ConcertDate startDate;
+        private ConcertDate endDate;
 
         private Builder()
         {
@@ -87,13 +87,13 @@ public class Ticketer
             return this;
         }
 
-        public Builder withStartDate(StartDate startDate)
+        public Builder withConcertDate(ConcertDate startDate)
         {
             this.startDate = startDate;
             return this;
         }
 
-        public Builder withEndDate(EndDate endDate)
+        public Builder withEndDate(ConcertDate endDate)
         {
             this.endDate = endDate;
             return this;

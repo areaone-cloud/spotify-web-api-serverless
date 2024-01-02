@@ -4,28 +4,28 @@ import java.util.List;
 
 public class Concert
 {
-    private String id;
-    private List<String> artistUris;
-    private List<Artist> artists;
-    private String date;
-    private String title;
-    private String location;
-    private String venue;
-    private Double lat;
-    private Double lon;
-    private List<PartnerConcert> partnerConcerts;
-    private StartDate startDate;
-    private Boolean festival;
-    private List<Ticketing> ticketing;
-    private String artistNameTitle;
-    private String carouselArtistGid;
-    private String carouselImage;
-    private String carouselArtistName;
-    private Boolean isParent;
-    private String category;
-    private Boolean isFirstParty;
-    private List<Ticketer> ticketers;
-    private EndDate endDate;
+   public String id;
+   public List<String> artistUris;
+   public List<ConcertArtist> artists;
+   public String date;
+   public String title;
+   public String location;
+   public String venue;
+   public Double lat;
+   public Double lon;
+   public List<PartnerConcert> partnerConcerts;
+   public ConcertDate startDate;
+   public Boolean festival;
+   public List<Ticketing> ticketing;
+   public String artistNameTitle;
+   public String carouselConcertArtistGid;
+   public String carouselImage;
+   public String carouselConcertArtistName;
+   public Boolean isParent;
+   public String category;
+   public Boolean isFirstParty;
+   public List<Ticketer> ticketers;
+   public ConcertDate endDate;
 
     public Concert()
     {
@@ -35,7 +35,7 @@ public class Concert
     {
         private String id;
         private List<String> artistUris;
-        private List<Artist> artists;
+        private List<ConcertArtist> artists;
         private String date;
         private String title;
         private String location;
@@ -43,18 +43,18 @@ public class Concert
         private Double lat;
         private Double lon;
         private List<PartnerConcert> partnerConcerts;
-        private StartDate startDate;
+        private ConcertDate startDate;
         private Boolean festival;
         private List<Ticketing> ticketing;
         private String artistNameTitle;
-        private String carouselArtistGid;
+        private String carouselConcertArtistGid;
         private String carouselImage;
-        private String carouselArtistName;
+        private String carouselConcertArtistName;
         private Boolean isParent;
         private String category;
         private Boolean isFirstParty;
         private List<Ticketer> ticketers;
-        private EndDate endDate;
+        private ConcertDate endDate;
 
         private Builder()
         {
@@ -71,13 +71,13 @@ public class Concert
             return this;
         }
 
-        public Builder withArtistUris(List<String> artistUris)
+        public Builder withConcertArtistUris(List<String> artistUris)
         {
             this.artistUris = artistUris;
             return this;
         }
 
-        public Builder withArtists(List<Artist> artists)
+        public Builder withConcertArtists(List<ConcertArtist> artists)
         {
             this.artists = artists;
             return this;
@@ -125,7 +125,7 @@ public class Concert
             return this;
         }
 
-        public Builder withStartDate(StartDate startDate)
+        public Builder withConcertDate(ConcertDate startDate)
         {
             this.startDate = startDate;
             return this;
@@ -143,15 +143,15 @@ public class Concert
             return this;
         }
 
-        public Builder withArtistNameTitle(String artistNameTitle)
+        public Builder withConcertArtistNameTitle(String artistNameTitle)
         {
             this.artistNameTitle = artistNameTitle;
             return this;
         }
 
-        public Builder withCarouselArtistGid(String carouselArtistGid)
+        public Builder withCarouselConcertArtistGid(String carouselConcertArtistGid)
         {
-            this.carouselArtistGid = carouselArtistGid;
+            this.carouselConcertArtistGid = carouselConcertArtistGid;
             return this;
         }
 
@@ -161,9 +161,9 @@ public class Concert
             return this;
         }
 
-        public Builder withCarouselArtistName(String carouselArtistName)
+        public Builder withCarouselConcertArtistName(String carouselConcertArtistName)
         {
-            this.carouselArtistName = carouselArtistName;
+            this.carouselConcertArtistName = carouselConcertArtistName;
             return this;
         }
 
@@ -191,7 +191,7 @@ public class Concert
             return this;
         }
 
-        public Builder withEndDate(EndDate endDate)
+        public Builder withEndDate(ConcertDate endDate)
         {
             this.endDate = endDate;
             return this;
@@ -201,7 +201,7 @@ public class Concert
         {
             Concert concert = new Concert();
             concert.venue = this.venue;
-            concert.carouselArtistGid = this.carouselArtistGid;
+            concert.carouselConcertArtistGid = this.carouselConcertArtistGid;
             concert.ticketers = this.ticketers;
             concert.lat = this.lat;
             concert.category = this.category;
@@ -217,7 +217,7 @@ public class Concert
             concert.artistNameTitle = this.artistNameTitle;
             concert.endDate = this.endDate;
             concert.lon = this.lon;
-            concert.carouselArtistName = this.carouselArtistName;
+            concert.carouselConcertArtistName = this.carouselConcertArtistName;
             concert.artistUris = this.artistUris;
             concert.artists = this.artists;
             concert.title = this.title;

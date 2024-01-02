@@ -4,10 +4,10 @@ import java.util.List;
 
 public class ConcertWrapper
 {
-    private Concert concert;
-    private String clickThruUrl;
-    private Boolean nearUser;
-    private List<ClickThru> clickThrus;
+    public Concert concert;
+    public String clickThruUrl;
+    public Boolean nearUser;
+    public List<ClickThru> clickThrus;
 
     public ConcertWrapper()
     {

@@ -1,13 +1,13 @@
 package cloud.areaone.spotify;
 
-public class StartDate
+public class ConcertDate
 {
     public String date;
     public Integer utcOffset;
     public String localDate;
     public Boolean unknownTime;
 
-    public StartDate()
+    public ConcertDate()
     {
     }
 
@@ -51,14 +51,14 @@ public class StartDate
             return this;
         }
 
-        public StartDate build()
+        public ConcertDate build()
         {
-            StartDate startDate = new StartDate();
-            startDate.unknownTime = this.unknownTime;
-            startDate.utcOffset = this.utcOffset;
-            startDate.date = this.date;
-            startDate.localDate = this.localDate;
-            return startDate;
+            ConcertDate endDate = new ConcertDate();
+            endDate.utcOffset = this.utcOffset;
+            endDate.localDate = this.localDate;
+            endDate.unknownTime = this.unknownTime;
+            endDate.date = this.date;
+            return endDate;
         }
     }
 }
