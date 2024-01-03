@@ -13,6 +13,11 @@ public class ConcertWrapper
     {
     }
 
+    public static Builder builder()
+    {
+        return new Builder();
+    }
+
     public static final class Builder
     {
         private Concert concert;
@@ -22,11 +27,6 @@ public class ConcertWrapper
 
         private Builder()
         {
-        }
-
-        public static Builder aConcertWrapper()
-        {
-            return new Builder();
         }
 
         public Builder withConcert(Concert concert)
