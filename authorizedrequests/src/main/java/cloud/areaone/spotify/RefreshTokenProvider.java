@@ -3,6 +3,7 @@ package cloud.areaone.spotify;
 import org.apache.hc.core5.http.ParseException;
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
+import se.michaelthelin.spotify.exceptions.detailed.TooManyRequestsException;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRefreshRequest;
 
@@ -12,7 +13,7 @@ import java.net.URI;
 public class RefreshTokenProvider
 {
     public AuthorizationCodeCredentials getRefreshedToken(ClientDetailsProvider detailsProvider,
-                                                          AuthorizationCodeCredentials credentials)
+                                                          AuthorizationCodeCredentials credentials) throws TooManyRequestsException
     {
         String clientId = detailsProvider.getClientId();
         String clientSecret = detailsProvider.getClientSecret();
@@ -33,9 +34,20 @@ public class RefreshTokenProvider
         {
             return request.execute();
         }
-        catch (IOException | SpotifyWebApiException | ParseException e)
+        catch (IOException | ParseException e)
         {
             throw new RuntimeException(e);
+        }
+        catch (SpotifyWebApiException e)
+        {
+            if (e instanceof TooManyRequestsException)
+            {
+                throw (TooManyRequestsException) e;
+            }
+            else
+            {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

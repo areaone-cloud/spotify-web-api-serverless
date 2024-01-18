@@ -3,6 +3,7 @@ package cloud.areaone.spotify;
 import org.apache.hc.core5.http.ParseException;
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
+import se.michaelthelin.spotify.exceptions.detailed.TooManyRequestsException;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
 
 import java.io.IOException;
@@ -10,7 +11,8 @@ import java.net.URI;
 
 public class AuthorizationCodeProvider
 {
-    public AuthorizationCodeCredentials getAuthorizationCredentials(ClientDetailsProvider detailsProvider, String code)
+    public AuthorizationCodeCredentials getAuthorizationCredentials(ClientDetailsProvider detailsProvider,
+                                                                    String code) throws TooManyRequestsException
     {
         String clientId = detailsProvider.getClientId();
         String clientSecret = detailsProvider.getClientSecret();
@@ -27,9 +29,20 @@ public class AuthorizationCodeProvider
                              .build()
                              .execute();
         }
-        catch (IOException | SpotifyWebApiException | ParseException e)
+        catch (IOException | ParseException e)
         {
             throw new RuntimeException(e);
+        }
+        catch (SpotifyWebApiException e)
+        {
+            if (e instanceof TooManyRequestsException)
+            {
+                throw (TooManyRequestsException) e;
+            }
+            else
+            {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
