@@ -6,19 +6,19 @@ import java.time.Instant;
 
 public class AuthorizationCodeCredentialsResponse
 {
-    private final AuthorizationCodeCredentials authorizationCodeCredentials;
+    private final AuthorizationCodeCredentials credentials;
     private final Instant expireTime;
 
-    public AuthorizationCodeCredentialsResponse(AuthorizationCodeCredentials authorizationCodeCredentials)
+    public AuthorizationCodeCredentialsResponse(AuthorizationCodeCredentials credentials)
     {
-        this.authorizationCodeCredentials = authorizationCodeCredentials;
+        this.credentials = credentials;
         this.expireTime = Instant.now()
-                                 .plusSeconds(authorizationCodeCredentials.getExpiresIn() - 5);
+                                 .plusSeconds(credentials.getExpiresIn() - 5);
     }
 
-    public AuthorizationCodeCredentials getAuthorizationCodeCredentials()
+    public AuthorizationCodeCredentials getCredentials()
     {
-        return authorizationCodeCredentials;
+        return credentials;
     }
 
     public Instant getExpireTime()
