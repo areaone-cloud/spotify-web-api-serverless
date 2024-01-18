@@ -15,11 +15,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LibraryArtistSimplifiedRequest
+public class LibraryArtistsSimplifiedRequest
 {
-    public LibraryArtistSimplifiedResponse getLibraryArtistsSimplified(AuthorizationCodeCredentials credentials,
-                                                                       int limit,
-                                                                       int offset) throws TooManyRequestsException
+    public LibraryArtistsSimplifiedResponse getLibraryArtistsSimplified(AuthorizationCodeCredentials credentials,
+                                                                        int limit,
+                                                                        int offset) throws TooManyRequestsException
     {
         GetUsersSavedTracksRequest.Builder requestBuilder = SpotifyApiClient.build(credentials)
                                                                             .getUsersSavedTracks();
@@ -42,7 +42,8 @@ public class LibraryArtistSimplifiedRequest
             boolean hasNext = savedTracks.getNext() != null && !savedTracks.getNext()
                                                                            .isEmpty();
 
-            return new LibraryArtistSimplifiedResponse(artistsSimplified, hasNext);
+            return new LibraryArtistsSimplifiedResponse(artistsSimplified,
+                                                        hasNext);
         }
         catch (IOException | ParseException e)
         {

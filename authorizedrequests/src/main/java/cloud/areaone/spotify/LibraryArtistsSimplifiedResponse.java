@@ -4,12 +4,12 @@ import se.michaelthelin.spotify.model_objects.specification.ArtistSimplified;
 
 import java.util.List;
 
-public class LibraryArtistSimplifiedResponse
+public class LibraryArtistsSimplifiedResponse
 {
     private final List<ArtistSimplified> artistsSimplified;
     private final boolean hasNext;
 
-    public LibraryArtistSimplifiedResponse(List<ArtistSimplified> artistsSimplified, boolean hasNext)
+    public LibraryArtistsSimplifiedResponse(List<ArtistSimplified> artistsSimplified, boolean hasNext)
     {
         this.artistsSimplified = artistsSimplified;
         this.hasNext = hasNext;

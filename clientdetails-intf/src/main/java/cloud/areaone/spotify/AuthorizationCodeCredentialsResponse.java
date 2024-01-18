@@ -6,8 +6,12 @@ import java.time.Instant;
 
 public class AuthorizationCodeCredentialsResponse
 {
-    private final AuthorizationCodeCredentials credentials;
-    private final Instant expireTime;
+    public AuthorizationCodeCredentials credentials;
+    public Instant expireTime;
+
+    public AuthorizationCodeCredentialsResponse()
+    {
+    }
 
     public AuthorizationCodeCredentialsResponse(AuthorizationCodeCredentials credentials)
     {
