@@ -12,6 +12,7 @@ import se.michaelthelin.spotify.model_objects.specification.SavedTrack;
 import se.michaelthelin.spotify.requests.data.library.GetUsersSavedTracksRequest;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -32,12 +33,14 @@ public class LibraryArtistsRequest
 
         SpotifyApi requestBuilder = SpotifyApiClient.build(credentials);
 
-        List<Artist> artists = response.getArtistsSimplified()
-                                       .stream()
-                                       .map(a -> executeArtistRequest(requestBuilder, a))
-                                       .collect(Collectors.toList());
+        List<String> artistsIds = response.getArtistsSimplified()
+                                          .stream()
+                                          .map(ArtistSimplified::getId)
+                                          .collect(Collectors.toList());
 
-        return new LibraryArtistsResponse(artists, response.isHasNext());
+        Artist[] artists = executeArtistRequest(requestBuilder, artistsIds);
+
+        return new LibraryArtistsResponse(Arrays.asList(artists), response.isHasNext());
     }
 
     public LibraryArtistSimplifiedResponse getLibraryArtistsSimplified(AuthorizationCodeCredentials credentials,
@@ -82,11 +85,11 @@ public class LibraryArtistsRequest
         }
     }
 
-    private static Artist executeArtistRequest(SpotifyApi requestBuilder, ArtistSimplified a)
+    private static Artist[] executeArtistRequest(SpotifyApi requestBuilder, List<String> artistIds)
     {
         try
         {
-            return requestBuilder.getArtist(a.getId())
+            return requestBuilder.getSeveralArtists(artistIds.toArray(new String[0]))
                                  .build()
                                  .execute();
         }

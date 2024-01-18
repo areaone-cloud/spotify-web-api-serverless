@@ -1,6 +1,6 @@
 allprojects {
     group 'cloud.areaone.spotify-web-api-serverless'
-    version '0.25-SNAPSHOT'
+    version '0.26-SNAPSHOT'
 }
 
 subprojects { subproject ->
