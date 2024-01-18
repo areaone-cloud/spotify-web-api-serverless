@@ -12,8 +12,8 @@ import java.net.URI;
 
 public class RefreshTokenProvider
 {
-    public AuthorizationCodeCredentials getRefreshedToken(ClientDetailsProvider detailsProvider,
-                                                          AuthorizationCodeCredentials credentials) throws TooManyRequestsException
+    public AuthorizationCodeCredentialsResponse getRefreshedToken(ClientDetailsProvider detailsProvider,
+                                                                  AuthorizationCodeCredentials credentials) throws TooManyRequestsException
     {
         String clientId = detailsProvider.getClientId();
         String clientSecret = detailsProvider.getClientSecret();
@@ -32,7 +32,9 @@ public class RefreshTokenProvider
 
         try
         {
-            return request.execute();
+            AuthorizationCodeCredentials newCredentials = request.execute();
+
+            return new AuthorizationCodeCredentialsResponse(newCredentials);
         }
         catch (IOException | ParseException e)
         {
