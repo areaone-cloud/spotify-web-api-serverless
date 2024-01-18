@@ -11,6 +11,9 @@ import se.michaelthelin.spotify.model_objects.specification.SavedTrack;
 import se.michaelthelin.spotify.requests.data.library.GetUsersSavedTracksRequest;
 
 import java.io.IOException;
+import java.time.Instant;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -39,11 +42,18 @@ public class LibraryArtistsSimplifiedRequest
                                                              .distinct()
                                                              .collect(Collectors.toList());
 
+            Instant newestAddedTime = Stream.of(savedTracks.getItems())
+                                            .map(SavedTrack::getAddedAt)
+                                            .map(Date::toInstant)
+                                            .max(Comparator.naturalOrder())
+                                            .orElse(Instant.now());
+
             boolean hasNext = savedTracks.getNext() != null && !savedTracks.getNext()
                                                                            .isEmpty();
 
             return new LibraryArtistsSimplifiedResponse(artistsSimplified,
-                                                        hasNext);
+                                                        hasNext,
+                                                        newestAddedTime);
         }
         catch (IOException | ParseException e)
         {
