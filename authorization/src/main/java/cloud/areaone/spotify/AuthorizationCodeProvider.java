@@ -11,8 +11,8 @@ import java.net.URI;
 
 public class AuthorizationCodeProvider
 {
-    public AuthorizationCodeCredentials getAuthorizationCredentials(ClientDetailsProvider detailsProvider,
-                                                                    String code) throws TooManyRequestsException
+    public AuthorizationCodeCredentialsResponse getAuthorizationCredentials(ClientDetailsProvider detailsProvider,
+                                                                            String code) throws TooManyRequestsException
     {
         String clientId = detailsProvider.getClientId();
         String clientSecret = detailsProvider.getClientSecret();
@@ -25,9 +25,11 @@ public class AuthorizationCodeProvider
                                           .build();
         try
         {
-            return spotifyApi.authorizationCode(code)
-                             .build()
-                             .execute();
+            AuthorizationCodeCredentials credentials = spotifyApi.authorizationCode(code)
+                                                                 .build()
+                                                                 .execute();
+
+            return new AuthorizationCodeCredentialsResponse(credentials);
         }
         catch (IOException | ParseException e)
         {
