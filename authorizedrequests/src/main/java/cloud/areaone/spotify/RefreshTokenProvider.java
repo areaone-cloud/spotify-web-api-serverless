@@ -34,7 +34,10 @@ public class RefreshTokenProvider
         {
             AuthorizationCodeCredentials newCredentials = request.execute();
 
-            return new AuthorizationCodeCredentialsResponse(newCredentials);
+            AuthorizationCodeCredentialsResponse authorizationCodeCredentialsResponse = new AuthorizationCodeCredentialsResponse(newCredentials);
+            authorizationCodeCredentialsResponse.getCredentials().refreshToken = credentials.getRefreshToken();
+
+            return authorizationCodeCredentialsResponse;
         }
         catch (IOException | ParseException e)
         {
