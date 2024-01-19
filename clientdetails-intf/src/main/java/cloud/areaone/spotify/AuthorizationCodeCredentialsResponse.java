@@ -1,7 +1,5 @@
 package cloud.areaone.spotify;
 
-import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
-
 import java.time.Instant;
 
 public class AuthorizationCodeCredentialsResponse
@@ -13,9 +11,9 @@ public class AuthorizationCodeCredentialsResponse
     {
     }
 
-    public AuthorizationCodeCredentialsResponse(AuthorizationCodeCredentials credentials)
+    public AuthorizationCodeCredentialsResponse(se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials credentials)
     {
-        this.credentials = credentials;
+        this.credentials = AuthorizationCodeCredentials.fromApi(credentials);
         this.expireTime = Instant.now()
                                  .plusSeconds(credentials.getExpiresIn() - 5);
     }
